@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Swan Infrastructure Group — Managed IT Services</title>
+<meta name="description" content="Remote-first managed IT services for small businesses — servers, endpoints, backup, firewall, and email security, with quarterly reviews that show the work. On-site across Minnesota.">
+<style>
+:root{
+  --ink:#14181C; --bronze:#A17C3C; --parch:#F4F1EC; --card:#FAF7F1;
+  --border:#D9D2C4; --mute:#6B6257; --green:#4F7A52; --amber:#C0902F;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{font-family:Arial,'Liberation Sans',Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.55;font-size:17px}
+a{color:var(--bronze)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--bronze);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+header.site{border-bottom:2px solid var(--bronze);background:#fff;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.wordmark{line-height:1.15;text-decoration:none}
+.wordmark .bs{display:block;font-weight:bold;font-size:19px;letter-spacing:.14em;color:var(--ink)}
+.wordmark .ig{display:block;font-size:10px;letter-spacing:.34em;color:var(--bronze);font-weight:bold}
+.nav nav a{color:var(--ink);text-decoration:none;font-size:14px;margin-left:26px;letter-spacing:.04em}
+.nav nav a:hover{color:var(--bronze)}
+.nav nav a.cta{color:#fff;background:var(--ink);padding:9px 16px;border:1px solid var(--ink)}
+.nav nav a.cta:hover{background:var(--bronze);border-color:var(--bronze);color:#fff}
+@media(max-width:720px){.nav nav a:not(.cta){display:none}}
+
+/* Hero */
+.hero{background:var(--parch);border-bottom:1px solid var(--border)}
+.hero .wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:center;padding-top:64px;padding-bottom:64px}
+.eyebrow{font-size:12px;font-weight:bold;letter-spacing:.32em;color:var(--bronze);text-transform:uppercase;margin-bottom:18px}
+h1{font-size:clamp(30px,4.6vw,46px);line-height:1.12;letter-spacing:-.01em;margin-bottom:18px}
+.hero p.lede{font-size:18px;color:var(--mute);max-width:52ch;margin-bottom:28px}
+.btnrow{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:bold;font-size:15px;padding:13px 22px;letter-spacing:.03em}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.primary:hover{background:var(--bronze)}
+.btn.ghost{color:var(--ink);border:1px solid var(--ink)}
+.btn.ghost:hover{border-color:var(--bronze);color:var(--bronze)}
+.hero .logo{text-align:center}
+.hero .logo img{max-width:300px;width:70%;height:auto}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr;gap:28px}.hero .logo{order:-1}.hero .logo img{max-width:190px}}
+
+/* Commitments band */
+.band{background:var(--ink);color:#fff}
+.band .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding-top:0;padding-bottom:0}
+.band .item{padding:28px 26px;border-left:1px solid rgba(255,255,255,.14)}
+.band .item:first-child{border-left:none;padding-left:0}
+.band h3{font-size:15px;letter-spacing:.06em;color:var(--bronze);margin-bottom:6px;text-transform:uppercase}
+.band p{font-size:14.5px;color:#D8D4CD}
+@media(max-width:820px){.band .wrap{grid-template-columns:1fr}.band .item{border-left:none;border-top:1px solid rgba(255,255,255,.14);padding-left:0}.band .item:first-child{border-top:none}}
+
+/* Sections */
+section{padding:68px 0}
+.sec-head{margin-bottom:34px;max-width:62ch}
+h2{font-size:clamp(24px,3vw,32px);padding-bottom:12px;border-bottom:2px solid var(--bronze);display:inline-block;margin-bottom:14px}
+.sec-head p{color:var(--mute)}
+
+/* Coverage table (signature) */
+.covertable{width:100%;border-collapse:collapse;border:1px solid var(--border);font-size:15.5px}
+.covertable th{background:var(--ink);color:#fff;text-align:left;padding:12px 14px;font-size:14px;letter-spacing:.05em}
+.covertable th:last-child{text-align:center}
+.covertable td{padding:13px 14px;border-top:1px solid var(--border);vertical-align:top}
+.covertable tr:nth-child(even) td{background:var(--parch)}
+.covertable td:first-child{font-weight:bold;white-space:nowrap}
+.covertable td:last-child{text-align:center}
+.pill{display:inline-block;background:var(--green);color:#fff;font-weight:bold;font-size:12.5px;padding:4px 12px;border-radius:2px;letter-spacing:.04em}
+.srcnote{font-size:13.5px;color:var(--mute);margin-top:14px;max-width:78ch}
+@media(max-width:720px){
+  .covertable thead{display:none}
+  .covertable, .covertable tbody, .covertable tr, .covertable td{display:block;width:100%}
+  .covertable td{border:none;padding:4px 14px}
+  .covertable td:first-child{padding-top:14px}
+  .covertable td:last-child{text-align:left;padding-bottom:14px}
+  .covertable tr{border-top:1px solid var(--border)}
+}
+
+/* Engagement cards */
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.path{background:var(--card);border:1px solid var(--border);padding:30px 28px}
+.path .tag{font-size:11.5px;font-weight:bold;letter-spacing:.26em;color:var(--bronze);text-transform:uppercase;margin-bottom:10px}
+.path h3{font-size:21px;margin-bottom:12px}
+.path p{font-size:15.5px;color:var(--mute);margin-bottom:14px}
+.path ul{list-style:none;font-size:15px}
+.path li{padding:7px 0 7px 20px;position:relative;border-top:1px solid var(--border)}
+.path li:before{content:"–";color:var(--bronze);position:absolute;left:0;font-weight:bold}
+@media(max-width:820px){.paths{grid-template-columns:1fr}}
+
+/* Why switch */
+.why{background:var(--parch);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.qa{display:grid;grid-template-columns:1fr 1fr;gap:20px 40px;max-width:960px}
+.qa .q{padding:20px 0;border-top:1px solid var(--border)}
+.qa .q h4{font-size:16.5px;margin-bottom:6px}
+.qa .q p{font-size:15px;color:var(--mute)}
+@media(max-width:820px){.qa{grid-template-columns:1fr}}
+
+/* Contact */
+.contact .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:48px}
+.contact .info p{margin-bottom:10px;color:var(--mute)}
+.contact .info .big{font-size:22px;color:var(--ink);font-weight:bold}
+.contact .info a{text-decoration:none;border-bottom:2px solid var(--bronze);color:var(--ink)}
+.contact .info a:hover{color:var(--bronze)}
+.ph{color:var(--bronze);font-weight:bold}
+@media(max-width:820px){.contact .wrap{grid-template-columns:1fr}}
+
+/* Footer */
+footer{border-top:2px solid var(--bronze);padding:22px 0 30px;font-size:13px;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="wordmark" href="#top" aria-label="Black Swan Infrastructure Group — home">
+      <span class="bs">BLACK SWAN</span>
+      <span class="ig">INFRASTRUCTURE GROUP</span>
+    </a>
+    <nav aria-label="Main">
+      <a href="#coverage">What we manage</a>
+      <a href="#engage">How we work</a>
+      <a href="#why">Our standard</a>
+      <a href="#background">Experience</a>
+      <a class="cta" href="#contact">Book an assessment</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Managed IT Services &middot; Remote-First &middot; Minnesota &amp; Beyond</p>
+      <h1>Managed IT that shows its work.</h1>
+      <p class="lede">Black Swan Infrastructure Group manages the servers, computers, backups, and security your business runs on &mdash; and proves it every quarter with a plain-English review of what was promised, what was done, and what comes next.</p>
+      <div class="btnrow">
+        <a class="btn primary" href="#contact">Book a free IT assessment</a>
+        <a class="btn ghost" href="#coverage">See what we manage</a>
+      </div>
+    </div>
+    <div class="logo">
+      <img src="data:image/png;base64,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" alt="Black Swan Infrastructure Group logo" width="300" height="270">
+    </div>
+  </div>
+</div>
+
+<div class="band">
+  <div class="wrap">
+    <div class="item">
+      <h3>Direct to the engineer</h3>
+      <p>You work with the person who actually manages your systems. No ticket queue purgatory, no account-manager relay.</p>
+    </div>
+    <div class="item">
+      <h3>Quarterly reviews, delivered</h3>
+      <p>A one-page review every quarter: uptime, patching, backups, and a roadmap. Not promised in the contract and forgotten &mdash; delivered.</p>
+    </div>
+    <div class="item">
+      <h3>Source-labeled reporting</h3>
+      <p>Every metric in your review says where it came from. We never claim monitoring we don't have &mdash; a small honesty that keeps the big numbers trustworthy.</p>
+    </div>
+  </div>
+</div>
+
+<section id="coverage">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What we manage</h2>
+      <p>This table is lifted straight from our quarterly business review. It's the same view of your environment you'll get every ninety days &mdash; because a managed-services agreement should be checkable, not just billable.</p>
+    </div>
+    <table class="covertable">
+      <thead>
+        <tr><th>Component</th><th>What we monitor &amp; manage</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Servers</td><td>Health, patching, uptime, hardware alerts (disk, power, temperature), warranty and lifecycle planning &mdash; refresh roadmaps before failures force them.</td><td><span class="pill">Covered</span></td></tr>
+        <tr><td>Workstations</td><td>Patch compliance, antivirus/EDR coverage, supported-OS tracking (no one left on end-of-life Windows), and responsive help desk for your staff.</td><td><span class="pill">Covered</span></td></tr>
+        <tr><td>Backup &amp; recovery</td><td>Daily backup verification and periodic restore tests. A backup that's never been restored is a hope, not a plan.</td><td><span class="pill">Covered</span></td></tr>
+        <tr><td>Firewall &amp; VPN</td><td>Firmware kept current, license renewals tracked, remote-access tunnels monitored. Firewalls age silently &mdash; we don't let them.</td><td><span class="pill">Covered</span></td></tr>
+        <tr><td>Email security</td><td>SPF, DKIM, and DMARC configured and monitored on your domain, whatever platform your mail runs on &mdash; Microsoft 365 or hosted mail alike.</td><td><span class="pill">Covered</span></td></tr>
+        <tr><td>Phones &amp; vendors</td><td>One point of contact for your carrier, internet provider, and hardware vendors. We chase them so you don't have to.</td><td><span class="pill">Covered</span></td></tr>
+      </tbody>
+    </table>
+    <p class="srcnote">Where a metric comes from a vendor system rather than our own monitoring tools, your review says so explicitly. Accurate reporting starts with being honest about its sources.</p>
+  </div>
+</section>
+
+<section id="engage">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Two ways to start</h2>
+      <p>Most businesses are already under contract with an IT provider. That's fine &mdash; there's a path for that.</p>
+    </div>
+    <div class="paths">
+      <div class="path">
+        <div class="tag">Under contract elsewhere</div>
+        <h3>vCTO Advisory</h3>
+        <p>A month-to-month advisory seat on your side of the table. We audit what your current provider's contract promises against what's actually being delivered, sit in on vendor conversations, and build your exit or renewal position.</p>
+        <ul>
+          <li>Contracted-vs-delivered audit of your current agreement</li>
+          <li>Independent review of backups, patching, and firmware currency</li>
+          <li>Refresh roadmap for aging servers and endpoints</li>
+          <li>Advisory fees credited toward onboarding if you switch</li>
+        </ul>
+      </div>
+      <div class="path">
+        <div class="tag">Ready for a provider</div>
+        <h3>Managed Services</h3>
+        <p>Flat monthly management of your whole environment &mdash; help desk, servers, endpoints, backup, firewall, and email security &mdash; quoted after a free on-site assessment, with the quarterly review built in.</p>
+        <ul>
+          <li>Flat monthly rate, per-user, quoted in writing</li>
+          <li>Onboarding: full inventory, credential takeover, restore test</li>
+          <li>Quarterly business review with roadmap, every quarter</li>
+          <li>Project work (server refresh, migrations) scoped separately</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>The standard we hold ourselves to</h2>
+      <p>Managed IT is easy to promise and hard to verify. These are the working standards behind every Black Swan agreement &mdash; and they're written into the quarterly review, so you can check them yourself.</p>
+    </div>
+    <div class="qa">
+      <div class="q"><h4>Firmware and patches stay current</h4><p>Firewalls, servers, and workstations are updated on a routine cadence &mdash; not when someone remembers, and not only after an incident.</p></div>
+      <div class="q"><h4>Backups are tested, not assumed</h4><p>Backup jobs can fail quietly for months. We verify them daily and run periodic restore tests, and the last test date appears in your review.</p></div>
+      <div class="q"><h4>Reviews arrive on schedule</h4><p>The quarterly business review isn't a contract clause &mdash; it's a recurring deliverable, on your calendar, every quarter.</p></div>
+      <div class="q"><h4>Hardware gets a plan before it fails</h4><p>Every server and workstation carries a lifecycle date in our records. Refreshes are budgeted and scheduled &mdash; never an emergency quote.</p></div>
+      <div class="q"><h4>Your email can't be impersonated</h4><p>SPF, DKIM, and DMARC are configured on your domain so criminals can't send mail as your company &mdash; and their status is monitored, not set-and-forgotten.</p></div>
+      <div class="q"><h4>You own your environment</h4><p>Credentials, documentation, and vendor accounts belong to you, in writing. If we ever part ways, the handoff is clean &mdash; no hostage-taking.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="background">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Enterprise experience, small-business scale</h2>
+      <p>Black Swan is a young brand built on fifteen years of enterprise infrastructure and security engineering. The practice brings datacenter standards &mdash; documentation, lifecycle planning, verified completion &mdash; to businesses that could never justify an enterprise IT budget.</p>
+    </div>
+    <div class="qa">
+      <div class="q"><h4>Trained inside the infrastructure giants</h4><p>Enterprise solution engineering at the world's largest hardware and virtualization vendors &mdash; designing storage, server, and hyper-converged infrastructure, and supporting one of the biggest VMware environments in the country: 10 vCenters, 500+ hosts, 20,000 virtual machines.</p></div>
+      <div class="q"><h4>National field-service networks</h4><p>Years of dispatched IT field work inside regulated financial institutions, multi-site retail, and enterprise branch environments &mdash; where every job is documented and verified.</p></div>
+      <div class="q"><h4>Fresh starts, without the downtime</h4><p>When an environment is past saving, we spec and stage a new one in parallel &mdash; server, endpoints, network, backup &mdash; and cut over on a planned weekend, not in the middle of a crisis.</p></div>
+      <div class="q"><h4>Why it matters to you</h4><p>We've been the entire IT department before &mdash; sole infrastructure owner for a 470-user company, interim head of infrastructure for a 25-location retailer. And the standards come from the other end of the scale: university, clinical, and government workloads where an unpatched system or an untested backup was never acceptable.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="info">
+      <div class="sec-head"><h2>Book a free IT assessment</h2></div>
+      <p>A short on-site visit or call: we inventory what you have, flag what's at risk, and put it in writing. No obligation, and the findings are yours to keep either way.</p>
+      <p class="big"><a href="mailto:SupportTeam@bsigit.com">SupportTeam@bsigit.com</a></p>
+      <p class="big"><a href="tel:+17632059061">763-205-9061</a></p>
+      <p>Remote-first management wherever your business runs, with on-site service across Minnesota &mdash; from the Twin Cities to the Arrowhead and beyond.</p>
+    </div>
+    <div class="info">
+      <div class="sec-head"><h2>Who you'll work with</h2></div>
+      <p><strong style="color:var(--ink)">Jonathan Lopez</strong>, Managing Partner. Black Swan Infrastructure Group is deliberately small: the person who assesses your environment is the person who manages it, answers the phone, and signs the quarterly review.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Black Swan Infrastructure Group &middot; bsigit.com</span>
+    <span>&copy; 2026 Black Swan Infrastructure Group. All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
